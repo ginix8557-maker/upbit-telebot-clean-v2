@@ -1,0 +1,291 @@
+{
+  "default_threshold_pct": 1.0,
+  "coins": {
+    "KRW-SOL": {
+      "avg_price": 289263.0,
+      "qty": 89.80100443,
+<<<<<<< HEAD
+      "last_notified_price": 232700.0,
+      "threshold_pct": 0.5,
+=======
+      "last_notified_price": 236900.0,
+      "threshold_pct": 0.2,
+>>>>>>> d87eb91a20944608b9ab65b28a4b6e47e8ce4b2b
+      "target_price": null,
+      "triggers": [
+        300000.0,
+        290000.0,
+        255000.0
+      ],
+<<<<<<< HEAD
+      "prev_price": 233200.0,
+      "last_alert_ts": 1763021979.903509
+=======
+      "prev_price": 237200.0
+>>>>>>> d87eb91a20944608b9ab65b28a4b6e47e8ce4b2b
+    },
+    "KRW-XRP": {
+      "avg_price": 4131.1,
+      "qty": 2183.33692558,
+<<<<<<< HEAD
+      "threshold_pct": 1.0,
+      "last_notified_price": 3739.0,
+      "triggers": [],
+      "prev_price": 3739.0,
+      "last_alert_ts": 1763022982.992104
+=======
+      "threshold_pct": 0.5,
+      "last_notified_price": 3386.0,
+      "triggers": [],
+      "prev_price": 3388.0
+>>>>>>> d87eb91a20944608b9ab65b28a4b6e47e8ce4b2b
+    },
+    "KRW-TRX": {
+      "avg_price": 420.0,
+      "qty": 0.0,
+      "threshold_pct": 1.0,
+      "last_notified_price": 446.0,
+      "triggers": [],
+      "prev_price": 447.0,
+      "last_alert_ts": 1762870313.566813
+    },
+    "KRW-BTC": {
+      "avg_price": 0.0,
+      "qty": 0.0,
+<<<<<<< HEAD
+      "threshold_pct": 0.5,
+      "last_notified_price": 154826000.0,
+      "prev_price": 154811000.0,
+      "triggers": [],
+      "last_alert_ts": 1763022487.098987
+=======
+      "threshold_pct": 0.2,
+      "last_notified_price": 152236000.0,
+      "prev_price": 152141000.0,
+      "triggers": []
+>>>>>>> d87eb91a20944608b9ab65b28a4b6e47e8ce4b2b
+    }
+  },
+  "rsi": {
+    "period": 14,
+    "overbought": 70,
+    "oversold": 30,
+    "cooldown_min": 15,
+    "last_signal_ts": {}
+  },
+  "notify": {
+    "poll_interval_sec": 2,
+    "last_push_ts": {}
+  },
+  "pending": {},
+  "naver": {
+    "auto_enabled": true,
+    "schedules": [
+      {
+        "time": "11:00",
+<<<<<<< HEAD
+        "bid": 320
+=======
+        "bid": 310
+>>>>>>> d87eb91a20944608b9ab65b28a4b6e47e8ce4b2b
+      },
+      {
+        "time": "20:00",
+        "bid": 50
+      }
+    ],
+<<<<<<< HEAD
+    "last_applied": "",
+=======
+    "last_applied": "2025-11-09 20:00 50",
+>>>>>>> d87eb91a20944608b9ab65b28a4b6e47e8ce4b2b
+    "last_known_bid": 50,
+    "adgroup_id": "grp-a001-06-000000029750049",
+    "abtest": null,
+    "rank_watch": {
+      "enabled": true,
+      "keyword": "강남 애견카페",
+      "marker": "두젠틀",
+      "interval": 300,
+<<<<<<< HEAD
+      "last_rank": 5,
+      "last_check": 1763023373.941907,
+=======
+      "last_rank": 3,
+      "last_check": 1762691424.576988,
+>>>>>>> d87eb91a20944608b9ab65b28a4b6e47e8ce4b2b
+      "last_rank_ads": 1,
+      "last_rank_org": 3
+    },
+    "review_watch": {
+      "enabled": true,
+      "interval": 180,
+<<<<<<< HEAD
+      "last_count": {
+        "visit": 533,
+        "blog": 172,
+        "total": 705
+      },
+      "last_check": 1763023273.943388,
+=======
+      "last_count": 530,
+      "last_check": 1762691444.577141,
+>>>>>>> d87eb91a20944608b9ab65b28a4b6e47e8ce4b2b
+      "last_visitor": 529,
+      "last_blog": null,
+      "last_total": 529,
+      "last_visitor_ids": [],
+      "last_blog_ids": []
+    }
+  },
+  "modes": {
+<<<<<<< HEAD
+    "1109405479": "pa"
+  },
+  "gcal": {
+    "enabled": true,
+    "calendars": {
+      "dogentle.gn@gmail.com": {
+        "name": "📅 호텔",
+        "known_events": {
+          "d8jo94o269qb2krr59qoja5mrc": {
+            "summary": "블랙 호텔(전체미납)",
+            "start": "2025-11-01T16:00:00+09:00",
+            "end": "2025-11-30T16:00:00+09:00",
+            "notified": {
+              "created": true,
+              "start_1d": false,
+              "start_1h": false,
+              "end_1h": false,
+              "end": false
+            }
+          },
+          "68oj8dhi61i64bb56grm4b9k64q3gbb1cop3gbb6cko6coj3c8qjio9gco": {
+            "summary": "땡구 호텔",
+            "start": "2025-11-08T17:00:00+09:00",
+            "end": "2025-11-11T15:00:00+09:00",
+            "notified": {
+              "created": true,
+              "start_1d": false,
+              "start_1h": false,
+              "end_1h": false,
+              "end": true
+            }
+          },
+          "75hm6o9gchh30b9h70ojeb9k6lh68bb26gqj6b9nc4q6ap9p6cpj0d34cg": {
+            "summary": "감자 호텔(전체미납)",
+            "start": "2025-11-17T17:00:00+09:00",
+            "end": "2025-12-01T18:00:00+09:00",
+            "notified": {
+              "created": true,
+              "start_1d": false,
+              "start_1h": false,
+              "end_1h": false,
+              "end": false
+            }
+          },
+          "cgq3gcj66pij6bb175gm6b9kcdgm8b9p6ooj8b9i68pmcd9ocoqj8cpk6k": {
+            "summary": "쿠쿠 호텔",
+            "start": "2025-11-09T12:00:00+09:00",
+            "end": "2025-11-10T13:30:00+09:00",
+            "notified": {
+              "created": true,
+              "start_1d": false,
+              "start_1h": false,
+              "end_1h": false,
+              "end": true
+            }
+          }
+        },
+        "last_sync": null
+      },
+      "v5ed5c688kem61967f0g5jg57g@group.calendar.google.com": {
+        "name": "💼 강남점",
+        "known_events": {
+          "r4p4sdn38g92hhfb3kqscekf5g_20251115": {
+            "summary": "제주생일🎂",
+            "start": "2025-11-15T00:00:00+09:00",
+            "end": "2025-11-16T00:00:00+09:00",
+            "notified": {
+              "created": true,
+              "start_1d": false,
+              "start_1h": false,
+              "end_1h": false,
+              "end": false
+            }
+          },
+          "ktspg8jnhperspfi4p4ngif410_20251210": {
+            "summary": "루숑 생일🎂🎉",
+            "start": "2025-12-10T00:00:00+09:00",
+            "end": "2025-12-11T00:00:00+09:00",
+            "notified": {
+              "created": true,
+              "start_1d": false,
+              "start_1h": false,
+              "end_1h": false,
+              "end": false
+            }
+          },
+          "hh44d0i82atp7ar2c5ufroiq0o_20251218": {
+            "summary": "홍삼이 생일",
+            "start": "2025-12-18T00:00:00+09:00",
+            "end": "2025-12-19T00:00:00+09:00",
+            "notified": {
+              "created": true,
+              "start_1d": false,
+              "start_1h": false,
+              "end_1h": false,
+              "end": false
+            }
+          }
+        },
+        "last_sync": null
+      },
+      "t2of8dh2bllmfigb6ef8ugi7r8@group.calendar.google.com": {
+        "name": "🏠 댕큐",
+        "known_events": {
+          "_64qkagi56134cb9k84qj6b9k6cq32b9p8kojab9g88q34c1i8kpjec1k8o": {
+            "summary": "애플케어 구매",
+            "start": "2025-11-17T15:00:00+09:00",
+            "end": "2025-11-17T16:00:00+09:00",
+            "notified": {
+              "created": true,
+              "start_1d": false,
+              "start_1h": false,
+              "end_1h": false,
+              "end": false
+            }
+          },
+          "_84rk8cph75342b9j88q38b9k6t2k6ba260p36b9o6d23igq368ojiha370": {
+            "summary": "블랙이 아빠 방문",
+            "start": "2025-11-20T14:00:00+09:00",
+            "end": "2025-11-20T14:30:00+09:00",
+            "notified": {
+              "created": true,
+              "start_1d": false,
+              "start_1h": false,
+              "end_1h": false,
+              "end": false
+            }
+          },
+          "_74q3aghg89348b9n6923ab9k6t0j6ba168rjeb9g851jggi26kp3acpp6o": {
+            "summary": "중대 당뇨 진찰",
+            "start": "2025-11-21T10:02:00+09:00",
+            "end": "2025-11-21T10:16:00+09:00",
+            "notified": {
+              "created": true,
+              "start_1d": false,
+              "start_1h": false,
+              "end_1h": false,
+              "end": false
+            }
+          }
+        },
+        "last_sync": null
+      }
+    }
+=======
+    "1109405479": "naver"
+>>>>>>> d87eb91a20944608b9ab65b28a4b6e47e8ce4b2b
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "coins": {},
+  "default_threshold_pct": 1.0,
+  "pending": {},
+  "naver": {
+    "auto_enabled": false,
+    "schedules": [],
+    "last_applied": "",
+    "last_known_bid": null,
+    "adgroup_id": null,
+    "abtest": null,
+    "rank_watch": {
+      "enabled": true,
+      "keyword": "",
+      "marker": "",
+      "interval": 300,
+      "last_rank": null,
+      "last_check": 1762779669.092439
+    },
+    "review_watch": {
+      "enabled": true,
+      "interval": 180,
+      "last_count": null,
+      "last_check": 1762779689.0969331
+    }
+  },
+  "modes": {
+    "1109405479": "naver"
+  }
+}
