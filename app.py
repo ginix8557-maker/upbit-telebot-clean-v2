@@ -1,4 +1,13 @@
 # app.py
+try:
+    import pkg_resources
+except ImportError:
+    import types as _types, sys as _sys
+    _pkg = _types.ModuleType('pkg_resources')
+    _pkg.get_distribution = lambda name: _types.SimpleNamespace(version='unknown')
+    _pkg.DistributionNotFound = Exception
+    _sys.modules['pkg_resources'] = _pkg
+
 import os, json, requests, atexit, signal, threading, random, re, time, base64, hmac, hashlib, urllib.parse
 import warnings
 import pytz
@@ -4029,6 +4038,58 @@ def get_place_review_stats():
 
 
 
+def get_latest_visitor_reviews(count: int = 3) -> list:
+    """
+    네이버 플레이스 GraphQL API로 최신 방문자 리뷰 내용을 가져온다.
+    반환: [{"nickname": str, "body": str, "created": str}, ...]
+    """
+    if not NAVER_PLACE_ID:
+        return []
+    try:
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Linux; Android 12; SM-G998N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36",
+            "Accept": "application/json",
+            "Accept-Language": "ko-KR,ko;q=0.9",
+            "Content-Type": "application/json",
+            "Referer": f"https://m.place.naver.com/place/{NAVER_PLACE_ID}/review/visitor",
+            "x-wtm-graphql": "eyJ0eXBlIjoiUExBQ0UifQ==",
+        }
+        query = """
+        query getVisitorReviews($id: String!, $page: Int) {
+          visitorReviews(input: {businessId: $id, page: $page, display: %d}) {
+            items {
+              id
+              body
+              created
+              author { nickname }
+            }
+          }
+        }
+        """ % count
+        payload = {"query": query, "variables": {"id": NAVER_PLACE_ID, "page": 1}}
+        r = requests.post(
+            "https://api.place.naver.com/graphql",
+            json=payload,
+            headers=headers,
+            timeout=10,
+        )
+        if r.status_code != 200:
+            return []
+        items = r.json().get("data", {}).get("visitorReviews", {}).get("items", [])
+        return [
+            {
+                "nickname": it.get("author", {}).get("nickname", ""),
+                "body": (it.get("body") or "").strip(),
+                "created": it.get("created", ""),
+            }
+            for it in items
+            if it.get("body", "").strip()
+        ]
+    except Exception as e:
+        print(f"[NAVER] 리뷰 내용 조회 실패: {e}")
+        return []
+
+
 def naver_review_watch_loop(context):
     nav = state.setdefault("naver", {})
     cfg = nav.setdefault("review_watch", {})
@@ -4093,6 +4154,12 @@ def naver_review_watch_loop(context):
         if db > 0:
             msg += f"📝 블로그 리뷰 +{db} → {b}\n"
         msg += f"💯 총합: {t}"
+
+        reviews = get_latest_visitor_reviews(count=min(dv, 3) if dv > 0 else 1)
+        if reviews:
+            msg += "\n\n─────────────────"
+            for rv in reviews:
+                msg += f"\n⭐ {rv['nickname']} ({rv['created']})\n{rv['body']}"
 
         try:
             send_ctx(context, msg)
